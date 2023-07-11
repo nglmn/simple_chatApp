@@ -1,8 +1,14 @@
 import { Box } from "@mui/material"
-import Button from '@mui/material/Button';
-import GoogleButton from "react-google-button";
+import SignIn from "./SignIn";
+import LogOut from './LogOut';
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
 
 export const Navbar = () => {
+
+	const [user] = useAuthState(auth);
+	console.log(user);
+
 	return (
 		<Box
 			sx={{
@@ -24,19 +30,10 @@ export const Navbar = () => {
 					textAlign: 'center',
 				}}
 			>chat</h1>
-			<GoogleButton />
-			<Button
-				variant="contained"
-				sx={{
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'flex-end',
-					borderRadius: 4,
-					height: 50,
-					m: 'auto',
-				}}
-			>Outlined
-			</Button>
+
+			{
+				user ? <LogOut /> : <SignIn />
+			}
 
 		</Box >
 	)

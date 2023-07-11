@@ -1,6 +1,7 @@
 import { Box, Container } from '@mui/material';
 
 import { Navbar } from './components/Navbar';
+import Chat from './components/Chat/Chat';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         }}
       >
         <Navbar />
+        <Chat />
 
       </Container>
     </Box >
