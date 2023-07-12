@@ -11,9 +11,11 @@ export const Navbar = () => {
 
 	return (
 		<Box
+			component='div'
 			sx={{
 				display: 'flex',
 				justifyContent: 'space-between',
+				position: 'sticky',
 				width: '100%',
 				height: 75,
 				backgroundColor: '#1A76D2',

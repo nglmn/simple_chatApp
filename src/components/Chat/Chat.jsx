@@ -3,6 +3,7 @@ import { query, collection, orderBy, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
 
 import Message from "./Message";
+import SendMessage from "./SendMessage";
 
 
 
@@ -33,7 +34,7 @@ const Chat = () => {
                     ))
                 }
             </main>
-            {/* SendMessageCOmp */}
+            <SendMessage />
             <span
                 ref={scroll}
             ></span>
